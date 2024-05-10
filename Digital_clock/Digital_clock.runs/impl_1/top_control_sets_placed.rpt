@@ -1,0 +1,113 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Wed Apr 17 03:32:58 2024
+| Host         : LAPTOP-A2SFIQBF running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    35 |
+|    Minimum number of control sets                        |    35 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   156 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    35 |
+| >= 0 to < 4        |     5 |
+| >= 4 to < 6        |    16 |
+| >= 6 to < 8        |     6 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     7 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              51 |           32 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             156 |           50 |
+| Yes          | No                    | No                     |              16 |            6 |
+| Yes          | No                    | Yes                    |              20 |            9 |
+| Yes          | Yes                   | No                     |              25 |           12 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------------------+------------------------------------+------------------------------------+------------------+----------------+--------------+
+|          Clock Signal         |            Enable Signal           |          Set/Reset Signal          | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------+------------------------------------+------------------------------------+------------------+----------------+--------------+
+|  alm/hour0_reg[2]             |                                    |                                    |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                | nolabel_line82/finishtimer_i_2_n_0 | nolabel_line82/finishtimer_i_1_n_0 |                1 |              1 |         1.00 |
+| ~nolabel_line82/c3/dummy_clk8 |                                    |                                    |                2 |              2 |         1.00 |
+|  pause_IBUF_BUFG              |                                    |                                    |                2 |              2 |         1.00 |
+| ~clk_IBUF_BUFG                |                                    |                                    |                3 |              3 |         1.00 |
+|  nolabel_line80/c2/CLK        | nolabel_line80/min1[3]_i_2__0_n_0  | nolabel_line80/min1[3]_i_1__1_n_0  |                2 |              4 |         2.00 |
+|  nolabel_line80/c2/CLK        | nolabel_line80/min0[3]_i_2__0_n_0  | nolabel_line80/min0[3]_i_1__0_n_0  |                1 |              4 |         4.00 |
+|  nolabel_line80/c2/CLK        | nolabel_line80/state               | nolabel_line80/sec0[3]_i_1__0_n_0  |                2 |              4 |         2.00 |
+|  nolabel_line80/c2/CLK        | nolabel_line80/sec1[3]_i_2__0_n_0  | nolabel_line80/sec1[3]_i_1__0_n_0  |                2 |              4 |         2.00 |
+|  dg/c1/CLK                    | dg/hour1[3]_i_1_n_0                | dg/sec016_out                      |                2 |              4 |         2.00 |
+|  dg/c1/CLK                    | dg/hour0[3]_i_1_n_0                | dg/sec016_out                      |                2 |              4 |         2.00 |
+|  dg/c1/CLK                    | dg/min0[3]_i_1_n_0                 | dg/sec016_out                      |                2 |              4 |         2.00 |
+|  dg/c1/CLK                    | dg/min1[3]_i_1_n_0                 | dg/sec016_out                      |                2 |              4 |         2.00 |
+|  dg/c1/CLK                    | dg/sec1[3]_i_1_n_0                 | dg/sec016_out                      |                1 |              4 |         4.00 |
+|  dg/c1/CLK                    | dg/state0                          | dg/sec0[3]_i_1_n_0                 |                2 |              4 |         2.00 |
+|  up_IBUF_BUFG                 | alm/almin0[3]_i_1_n_0              |                                    |                1 |              4 |         4.00 |
+| ~nolabel_line82/c3/dummy_clk8 |                                    | nolabel_line82/sec0[2]_i_1_n_0     |                3 |              4 |         1.33 |
+| ~nolabel_line82/c3/dummy_clk8 | nolabel_line82/min1[3]_i_2_n_0     | nolabel_line82/min1[3]_i_1__0_n_0  |                2 |              4 |         2.00 |
+|  up_IBUF_BUFG                 | alm/almin1[3]_i_1_n_0              |                                    |                1 |              4 |         4.00 |
+|  up_IBUF_BUFG                 | alm/alhour0[3]_i_1_n_0             |                                    |                2 |              4 |         2.00 |
+|  up_IBUF_BUFG                 | alm/alhour1[3]_i_1_n_0             |                                    |                2 |              4 |         2.00 |
+|  right_IBUF_BUFG              |                                    |                                    |                3 |              6 |         2.00 |
+| ~nolabel_line82/c3/dummy_clk8 |                                    | nolabel_line82/min1[3]_i_1__0_n_0  |                3 |              6 |         2.00 |
+|  dg/E[0]                      |                                    |                                    |                3 |              7 |         2.33 |
+|  alm/E[0]                     |                                    |                                    |                3 |              7 |         2.33 |
+|  nolabel_line80/E[0]          |                                    |                                    |                5 |              7 |         1.40 |
+|  nolabel_line82/E[0]          |                                    |                                    |                6 |              7 |         1.17 |
+|  clk_IBUF_BUFG                |                                    |                                    |                4 |              9 |         2.25 |
+|  clk_IBUF_BUFG                |                                    | s1/disp_select                     |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG                |                                    | s3/disp_select                     |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG                |                                    | s2/disp_select                     |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG                |                                    | s4/disp_select                     |                5 |             17 |         3.40 |
+| ~clk_IBUF_BUFG                |                                    | nolabel_line82/c3/clkout           |                8 |             26 |         3.25 |
+| ~clk_IBUF_BUFG                |                                    | nolabel_line80/c2/clkout           |                8 |             26 |         3.25 |
+| ~clk_IBUF_BUFG                |                                    | dg/c1/clkout                       |                8 |             26 |         3.25 |
++-------------------------------+------------------------------------+------------------------------------+------------------+----------------+--------------+
+
+
